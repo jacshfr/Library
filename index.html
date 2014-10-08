@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To Do List</title>
+    <script src="jquery-1.11.1.js"></script>
+  </head>
+  <body>
+    <h2>To Do</h2>
+    <input id="input" placeholder="Input Task Here" value=""></input>
+    <input id="button" type="button" value="Add"></input>
+      <ul></ul>
+  </body>
+  <script>
+    $('#button').on('click', function() {
+      var input = $('#input').val();
+      $('#input').val('');
+      $('ul').prepend('<li class="task">' + input + '</li>');
+      $('.task').on('click', function() {
+        this.remove();
+      })
+    })
+  </script>
+</html>
